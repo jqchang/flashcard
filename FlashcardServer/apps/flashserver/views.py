@@ -13,7 +13,7 @@ def index(req):
 def deck_index(req):
     if req.method == 'GET':
         all_decks = Deck.objects.all()
-        return JsonResponse({"debug_name":"deck_index", "debug_method":"get", "data":[{"name":deck.name, "id":deck.id} for deck in all_decks]}, safe=True)
+        return JsonResponse({"decks":[{"name":deck.name, "id":deck.id, "created_at":deck.created_at, "updated_at":deck.updated_at, "num_cards":deck.cards.count()} for deck in all_decks]}, safe=True)
     elif req.method == 'POST':
         new_deck = Deck.objects.validate(req.POST)
         if new_deck["success"]:
@@ -30,8 +30,10 @@ def deck_target(req, id):
         except Deck.DoesNotExist:
             return JsonResponse({"error":"Deck not found"})
     elif req.method == 'PUT':
+        # TODO
         return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"put"}, safe=True)
     elif req.method == 'DELETE':
+        # TODO
         return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"delete"}, safe=True)
     else:
         return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"unknown"}, safe=True)
@@ -58,8 +60,10 @@ def card_target(req, id):
         except Card.DoesNotExist:
             return JsonResponse({"error":"Card not found"})
     elif req.method == 'PUT':
+        # TODO
         return JsonResponse({"debug_name":"card_target", "id":id, "debug_method":"put"}, safe=True)
     elif req.method == 'DELETE':
+        # TODO
         return JsonResponse({"debug_name":"card_target", "id":id, "debug_method":"delete"}, safe=True)
     else:
         return JsonResponse({"debug_name":"card_target", "id":id, "debug_method":"unknown"}, safe=True)
