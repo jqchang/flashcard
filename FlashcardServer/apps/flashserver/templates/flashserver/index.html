@@ -1,7 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  console.log("ready")
+  $("#side1").focus()
+  $("#side2").on("keypress",function(e) {
+      var key = e.keyCode;
+
+      // If the user has pressed enter
+      if (key == 13) {
+          $('#new_card').submit()
+          return false;
+      }
+      else {
+          return true;
+      }
+  });
+});
+</script>
+
 Decks:
 <ol>
   {%for deck in decks%}
-  <li>{{deck.name}}</li>
+  <li>{{deck.name}} ({{deck.cards.count}} cards)</li>
   {%endfor%}
 </ol>
 <form action='decks' method='post'>
@@ -19,10 +39,10 @@ Decks:
 Cards:
 <ol>
   {%for card in cards%}
-  <li>{{card.side1}} {{card.side2}}</li>
+  <li>{{card.side1}} - {{card.side2}}</li>
   {%endfor%}
 </ol>
-<form action='cards' method='post'>
+<form id='new_card' action='cards' method='post'>
   <table>
     <tbody>
       <tr>
@@ -37,11 +57,11 @@ Cards:
       </tr>
       <tr>
         <td>Side 1:</td>
-        <td><input type='text' name='side1'></td>
+        <td><input id='side1' type='text' name='side1'></td>
       </tr>
       <tr>
         <td>Side 2:</td>
-        <td><input type='text' name='side2'></td>
+        <td><textarea id='side2' name='side2' cols=80 rows=10></textarea></td>
       </tr>
     </tbody>
   </table>

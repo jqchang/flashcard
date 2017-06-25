@@ -43,11 +43,12 @@ def deck_target(req, id):
 def card_index(req):
     if req.method == 'GET':
         all_cards = Card.objects.all()
-        return JsonResponse({"cards":[{"side1":card.side1, "side2":card.side2, "id":card.id, "created_at":card.created_at, "updated_at":card.updated_at} for card in all_cards]}, safe=True)
+        return JsonResponse({"cards":[{"side1":card.side1, "side2":card.side2, "id":card.id, "created_at":card.created_at, "updated_at":card.updated_at, "deck_id":card.deck.id, "deck_name":card.deck.name} for card in all_cards]}, safe=True)
     elif req.method == 'POST':
         new_card = Card.objects.validate(req.POST)
         if new_card["success"]:
-            return redirect(card_target, id=new_card["data"].id)
+            #return redirect(card_target, id=new_card["data"].id)
+            return redirect(index)
         else:
             return JsonResponse({"debug_name":"card_index", "debug_method":"post", "data":new_card["errors"].values()}, safe=True)
 
