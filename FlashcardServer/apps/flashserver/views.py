@@ -23,18 +23,20 @@ def deck_index(req):
 
 @csrf_exempt
 def deck_target(req, id):
+    try:
+        deck = Deck.objects.get(id=id)
+    except Deck.DoesNotExist:
+        print "Deck", id, "not found"
+        return JsonResponse({"error":"Deck not found"})
     if req.method == 'GET':
-        try:
-            deck = Deck.objects.get(id=id)
-            return JsonResponse({"name":deck.name, "id":deck.id, "created_at":deck.created_at, "updated_at":deck.updated_at, "cards":list(deck.cards.all())}, safe=False)
-        except Deck.DoesNotExist:
-            return JsonResponse({"error":"Deck not found"})
+        return JsonResponse({"name":deck.name, "id":deck.id, "created_at":deck.created_at, "updated_at":deck.updated_at, "cards":list(deck.cards.all())}, safe=False)
     elif req.method == 'PUT':
         # TODO
         return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"put"}, safe=True)
     elif req.method == 'DELETE':
         # TODO
-        return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"delete"}, safe=True)
+        deck.delete()
+        return JsonResponse({"success":True, "id":id}, safe=False)
     else:
         return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"unknown"}, safe=True)
 

@@ -41,13 +41,39 @@ $(document).ready(function() {
       });
     }
   });
+  $(".delete_deck").click(function(e) {
+    if($(this).text() == "Delete") {
+      $(this).text("Confirm");
+      $(this).css("color", "red");
+      $(this).parent().css("color", "red");
+    }
+    else {
+      let decknum = $(this).parent().attr("decknum")
+
+      $.ajax({
+        url: '/decks/'+decknum,
+        type: 'DELETE',
+        success: function(result) {
+            // Do something with the result
+          console.log(result.success)
+          if(result.success == true) {
+            console.log("Success = hiding", $(this).parent())
+            $("#decknum"+decknum).hide()
+          }
+          else {
+            alert("Deck not found!");
+          }
+        }
+      });
+    }
+  });
 });
 </script>
 
 Decks:
 <ol>
   {%for deck in decks%}
-  <li>{{deck.name}} ({{deck.cards.count}} cards)</li>
+  <li id="decknum{{deck.id}}" decknum={{deck.id}}>{{deck.name}} ({{deck.cards.count}} cards) <button class="delete_deck" name="{{deck.id}}">Delete</button></li>
   {%endfor%}
 </ol>
 <form action='decks' method='post'>
