@@ -29,7 +29,7 @@ def deck_target(req, id):
         print "Deck", id, "not found"
         return JsonResponse({"error":"Deck not found"})
     if req.method == 'GET':
-        return JsonResponse({"name":deck.name, "id":deck.id, "created_at":deck.created_at, "updated_at":deck.updated_at, "cards":list(deck.cards.all())}, safe=False)
+        return JsonResponse({"name":deck.name, "id":deck.id, "created_at":deck.created_at, "updated_at":deck.updated_at, "cards":list(deck.cards.all().values())}, safe=False)
     elif req.method == 'PUT':
         # TODO
         return JsonResponse({"debug_name":"deck_target", "id":id, "debug_method":"put"}, safe=True)
