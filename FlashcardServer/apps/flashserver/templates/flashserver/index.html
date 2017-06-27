@@ -15,6 +15,25 @@ $(document).ready(function() {
           return true;
       }
   });
+  $(".delete_card").click(function(e) {
+    let cardnum = $(this).parent().attr("cardnum")
+    console.log("click", cardnum);
+    $.ajax({
+      url: '/cards/'+cardnum,
+      type: 'DELETE',
+      success: function(result) {
+          // Do something with the result
+        console.log(result.success)
+        if(result.success == true) {
+          console.log("Success = hiding", $(this).parent())
+          $("#cardnum"+cardnum).hide()
+        }
+        else {
+          alert("Card not found!");
+        }
+      }
+    });
+  });
 });
 </script>
 
@@ -38,8 +57,14 @@ Decks:
 
 Cards:
 <ol>
-  {%for card in cards%}
-  <li>{{card.side1}} - {{card.side2}}</li>
+  {%for deck in decks%}
+  <li>{{deck.name}}
+    <ol>
+      {%for card in deck.cards.all%}
+      <li id="cardnum{{card.id}}" cardnum="{{card.id}}">{{card.side1}} - {{card.side2}} <button class="delete_card" name="{{card.id}}">Delete</button></li>
+      {%endfor%}
+    </ol>
+  </li>
   {%endfor%}
 </ol>
 <form id='new_card' action='cards' method='post'>

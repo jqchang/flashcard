@@ -54,17 +54,22 @@ def card_index(req):
 
 @csrf_exempt
 def card_target(req, id):
+    # card does not exist
+    try:
+        card = Card.objects.get(id=id)
+    except Card.DoesNotExist:
+        print "Card", id, "not found"
+        return JsonResponse({"success":False,"error":"Card "+id+" not found"})
+    # retrieve card
     if req.method == 'GET':
-        try:
-            card = Card.objects.get(id=id)
-            return JsonResponse({"side1":card.side1, "side2":card.side2, "id":card.id, "created_at":card.created_at, "updated_at":card.updated_at, "deck_id":card.deck.id, "deck_name":card.deck.name}, safe=False)
-        except Card.DoesNotExist:
-            return JsonResponse({"error":"Card not found"})
+        return JsonResponse({"side1":card.side1, "side2":card.side2, "id":card.id, "created_at":card.created_at, "updated_at":card.updated_at, "deck_id":card.deck.id, "deck_name":card.deck.name}, safe=False)
+    # update card
     elif req.method == 'PUT':
         # TODO
         return JsonResponse({"debug_name":"card_target", "id":id, "debug_method":"put"}, safe=True)
+    # destroy card
     elif req.method == 'DELETE':
-        # TODO
-        return JsonResponse({"debug_name":"card_target", "id":id, "debug_method":"delete"}, safe=True)
+        card.delete()
+        return JsonResponse({"success":True, "id":id}, safe=False)
     else:
         return JsonResponse({"debug_name":"card_target", "id":id, "debug_method":"unknown"}, safe=True)
