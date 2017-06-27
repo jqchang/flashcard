@@ -20,10 +20,8 @@ class Deck(models.Model):
 
 class CardManager(models.Manager):
     def validate(self, postData):
-        print "Card:", postData
         if "side1" in postData and "side2" in postData and "deck" in postData:
             try:
-                print "chkpt 1"
                 card = self.create(side1=postData["side1"], side2=postData["side2"], deck=Deck.objects.get(id=postData["deck"]))
                 return {"success":True, "data":card}
             except Deck.DoesNotExist:
