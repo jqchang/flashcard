@@ -16,23 +16,30 @@ $(document).ready(function() {
       }
   });
   $(".delete_card").click(function(e) {
-    let cardnum = $(this).parent().attr("cardnum")
-    console.log("click", cardnum);
-    $.ajax({
-      url: '/cards/'+cardnum,
-      type: 'DELETE',
-      success: function(result) {
-          // Do something with the result
-        console.log(result.success)
-        if(result.success == true) {
-          console.log("Success = hiding", $(this).parent())
-          $("#cardnum"+cardnum).hide()
+    if($(this).text() == "Delete") {
+      $(this).text("Confirm");
+      $(this).css("color", "red");
+      $(this).parent().css("color", "red");
+    }
+    else {
+      let cardnum = $(this).parent().attr("cardnum")
+
+      $.ajax({
+        url: '/cards/'+cardnum,
+        type: 'DELETE',
+        success: function(result) {
+            // Do something with the result
+          console.log(result.success)
+          if(result.success == true) {
+            console.log("Success = hiding", $(this).parent())
+            $("#cardnum"+cardnum).hide()
+          }
+          else {
+            alert("Card not found!");
+          }
         }
-        else {
-          alert("Card not found!");
-        }
-      }
-    });
+      });
+    }
   });
 });
 </script>
