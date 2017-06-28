@@ -1,0 +1,7 @@
+#Tue Jun 27 18:14:43 PDT 2017
+base.0=/Users/jqchang/Code/Python/Flashcard/FlashcardClient/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_cc4623d6d82d991f8332452ffe41e7eb9011e669
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/jqchang/Code/Python/Flashcard/FlashcardClient/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0b25cdc50ba8549514c14446da68d5866a3c0454/classes.dex
+base.1=/Users/jqchang/Code/Python/Flashcard/FlashcardClient/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0b25cdc50ba8549514c14446da68d5866a3c0454
+file.0=/Users/jqchang/Code/Python/Flashcard/FlashcardClient/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_cc4623d6d82d991f8332452ffe41e7eb9011e669/classes.dex

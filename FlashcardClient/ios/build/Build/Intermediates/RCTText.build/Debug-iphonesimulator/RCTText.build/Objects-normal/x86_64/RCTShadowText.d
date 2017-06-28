@@ -1,0 +1,35 @@
+dependencies: \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/node_modules/react-native/Libraries/Text/RCTShadowText.m \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/node_modules/react-native/Libraries/Text/RCTShadowText.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAccessibilityManager.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFont.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView+Layout.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManager.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/node_modules/react-native/Libraries/Text/RCTShadowRawText.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/node_modules/react-native/Libraries/Text/RCTText.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/node_modules/react-native/Libraries/Text/RCTTextView.h \
+  /Users/jqchang/Code/Python/Flashcard/FlashcardClient/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTView.h
