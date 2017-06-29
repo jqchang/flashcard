@@ -1,0 +1,2 @@
+# flashcard_client
+DISCONTINUED - SEE SEPARATE REPOSITORIES
